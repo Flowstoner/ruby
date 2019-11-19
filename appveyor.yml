@@ -11,7 +11,7 @@ environment:
   zlib_version: "1.2.11"
   matrix:
     # to reduce time for finishing all jobs, run the slowest msys2 build first.
-    - build: msys2
+    #- build: msys2
     #  APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     #  GEMS_FOR_TEST: "timezone tzinfo"
     - build: vs
@@ -64,7 +64,7 @@ for:
   build_script:
     - cd %APPVEYOR_BUILD_FOLDER%
     - cd %Platform%-mswin_%vs%
-    - ..\win32\configure.bat --without-ext=+,dbm,gdbm,readline --with-opt-dir=/usr/local --with-openssl-dir=%OPENSSL_DIR:\=/%
+    - ..\win32\configure.bat --with-static-linked-ext=true --without-ext=+,dbm,gdbm,readline --with-opt-dir=/usr/local --with-openssl-dir=%OPENSSL_DIR:\=/%
     - nmake -l
     - nmake install-nodoc
     - \usr\bin\ruby -v -e "p :locale => Encoding.find('locale'), :filesystem => Encoding.find('filesystem')"
