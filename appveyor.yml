@@ -125,7 +125,8 @@ for:
     #- mingw32-make test-all TESTOPTS="--retry --job-status=normal --show-skip --timeout-scale=1.5 --excludes=../ruby/test/excludes/_appveyor" TESTS="../ruby/test/win32ole ../ruby/test/open-uri/test_open-uri.rb"
     #- mingw32-make test-spec MSPECOPT=-fs # not using `-j` because sometimes `mspec -j` silently dies on Windows
 after_build:
-  - 7z a build.zip %APPVEYOR_BUILD_FOLDER%
+  - 7z a %APPVEYOR_BUILD_FOLDER%/build.zip %APPVEYOR_BUILD_FOLDER%
+  - appveyor PushArtifact %APPVEYOR_BUILD_FOLDER%
 artifacts:
   # pushing a single file
-  - path: build.zip
+  - path: %APPVEYOR_BUILD_FOLDER%/build.zip
