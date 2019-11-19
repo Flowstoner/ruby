@@ -42,6 +42,10 @@ extern ID ruby_static_id_cause;
 #include "eval_error.c"
 #include "eval_jump.c"
 
+void* g_pInterpreter = 0;
+void* ruby_interpreterPtr(void) { return g_pInterpreter; }
+void ruby_setInterpreterPtr(void* ptr) { g_pInterpreter = ptr; }
+
 #define CLASS_OR_MODULE_P(obj) \
     (!SPECIAL_CONST_P(obj) && \
      (BUILTIN_TYPE(obj) == T_CLASS || BUILTIN_TYPE(obj) == T_MODULE))
