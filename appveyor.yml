@@ -126,7 +126,7 @@ for:
     #- mingw32-make test-spec MSPECOPT=-fs # not using `-j` because sometimes `mspec -j` silently dies on Windows
 after_build:
   - 7z a %APPVEYOR_BUILD_FOLDER%/build.zip %APPVEYOR_BUILD_FOLDER%
-  - appveyor PushArtifact %APPVEYOR_BUILD_FOLDER%
-artifacts:
+  - appveyor PushArtifact %APPVEYOR_BUILD_FOLDER%/build.zip
+#artifacts:
   # pushing a single file
-  - path: %APPVEYOR_BUILD_FOLDER%/build.zip
+  #- path: %APPVEYOR_BUILD_FOLDER%/build.zip
