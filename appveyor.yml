@@ -80,7 +80,7 @@ for:
     - nmake -l test-spec MSPECOPT=-fs # not using `-j` because sometimes `mspec -j` silently dies on Windows
 artifacts:
   # pushing a single file
-  - path: build
+  - path: build.zip
 -
   matrix:
     only:
