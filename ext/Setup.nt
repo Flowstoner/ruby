@@ -27,4 +27,4 @@ stringio
 strscan
 #syslog
 win32ole
-#zlib
+zlib
