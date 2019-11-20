@@ -51,5 +51,10 @@ test_script:
   - nmake -l "TESTOPTS=-v -q" test-basic
   - nmake -l "TESTOPTS=-q -j%JOBS%" test-all
   - nmake -l test-spec
+after_build:
+  - 7z a %APPVEYOR_BUILD_FOLDER%/build.zip %APPVEYOR_BUILD_FOLDER%
+  - appveyor PushArtifact %APPVEYOR_BUILD_FOLDER%/build.zip
+  - 7z a C:\usr\build_usr.zip C:\usr\
+  - appveyor PushArtifact C:\usr\build_usr.zip
 matrix:
   fast_finish: true
