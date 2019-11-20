@@ -42,6 +42,11 @@ extern ID ruby_static_id_cause;
 #include "eval_error.c"
 #include "eval_jump.c"
 
+// FS Reference
+void* g_pInterpreter = 0;
+void* ruby_interpreterPtr(void) { return g_pInterpreter; }
+void ruby_setInterpreterPtr(void* ptr) { g_pInterpreter = ptr; }
+
 void* g_pInterpreter = 0;
 void* ruby_interpreterPtr(void) { return g_pInterpreter; }
 void ruby_setInterpreterPtr(void* ptr) { g_pInterpreter = ptr; }
