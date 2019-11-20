@@ -45,10 +45,11 @@ build_script:
   - nmake -l
   - nmake install-nodoc
   - cd %APPVEYOR_BUILD_FOLDER%
-  - git clone git://github.com/ffi/ffi.git
-  - cd ffi 
-  - git submodule update --init --recursive
-  - \usr\bin\rake install
+  #- git clone git://github.com/ffi/ffi.git
+  #- cd ffi 
+  #- git submodule update --init --recursive
+  #- \usr\bin\rake install
+  #- \usr\bin\gem install ffi
   - \usr\bin\ruby -v -e "p :locale => Encoding.find('locale'), :filesystem => Encoding.find('filesystem')"
 test_script:
   - set /a JOBS=%NUMBER_OF_PROCESSORS%
