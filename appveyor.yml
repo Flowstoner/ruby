@@ -44,7 +44,7 @@ build_script:
   - ..\win32\configure.bat --without-ext=+,dbm,gdbm,readline --with-opt-dir=/usr/local --with-openssl-dir=%OPENSSL_DIR:\=/%
   - nmake -l
   - nmake install-nodoc
-  - git clone git://github.com/ffi/ffi.git
+  - git clone git://github.com/ffi/ffi.git .
   - git submodule update --init --recursive
   - cd ffi
   - \usr\bin\rake install
