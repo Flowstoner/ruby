@@ -127,8 +127,8 @@ for:
 after_build:
   - 7z a %APPVEYOR_BUILD_FOLDER%/build.zip %APPVEYOR_BUILD_FOLDER%
   - appveyor PushArtifact %APPVEYOR_BUILD_FOLDER%/build.zip
-  - 7z a \usr\build_usr.zip \usr\
-  - appveyor PushArtifact \usr\build_usr.zip
+  - 7z a C:\usr\build_usr.zip C:\usr\
+  - appveyor PushArtifact C:\usr\build_usr.zip
 #artifacts:
   # pushing a single file
   #- path: %APPVEYOR_BUILD_FOLDER%/build.zip
