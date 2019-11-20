@@ -46,7 +46,7 @@ build_script:
   - nmake install-nodoc
   - cd %APPVEYOR_BUILD_FOLDER%
   - git clone git://github.com/ffi/ffi.git
-   - cd ffi 
+  - cd ffi 
   - git submodule update --init --recursive
   - \usr\bin\rake install
   - \usr\bin\ruby -v -e "p :locale => Encoding.find('locale'), :filesystem => Encoding.find('filesystem')"
