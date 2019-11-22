@@ -49,7 +49,7 @@ build_script:
   #- cd ffi 
   #- git submodule update --init --recursive
   #- \usr\bin\rake install
-  - %APPVEYOR_BUILD_FOLDER%\bin\gem install ffi
+  - \bin\gem install ffi
   - \usr\bin\ruby -v -e "p :locale => Encoding.find('locale'), :filesystem => Encoding.find('filesystem')"
 test_script:
   - set /a JOBS=%NUMBER_OF_PROCESSORS%
